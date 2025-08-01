@@ -11,6 +11,8 @@ import re
 import smtplib
 import random
 from email.message import EmailMessage
+import streamlit.components.v1 as components
+
 
 st.set_page_config(page_title="Instagram Manager", layout="wide")
 
@@ -325,6 +327,26 @@ if not st.session_state.logged_in:
             "</div>",
             unsafe_allow_html=True
         )        
+        # Embed Tawk.to widget
+        components.html(
+            """
+            <!--Start of Tawk.to Script-->
+            <script type="text/javascript">
+            var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+            (function(){
+            var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+            s1.async=true;
+            s1.src='https://embed.tawk.to/688ce23e394cad192dfa649d/1j1j57hsj';
+            s1.charset='UTF-8';
+            s1.setAttribute('crossorigin','*');
+            s0.parentNode.insertBefore(s1,s0);
+            })();
+            </script>
+            <!--End of Tawk.to Script-->
+            """,
+            height=0,  # Keep hidden
+            scrolling=False  # Keeps the component hidden
+        )
 
     elif auth_mode == "Pricing":
         st.title("💰 Pricing Plans")
