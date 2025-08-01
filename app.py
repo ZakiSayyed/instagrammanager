@@ -319,23 +319,20 @@ if not st.session_state.logged_in:
         st.write("To upgrage your subscription, please contact us at:")
         st.write("Email: upgrade@automatexpos.com")
 
-        st.markdown(
-            "<hr style='margin-top:2em;'/>"
-            "<div style='text-align:center; color:gray;'>"
-            "AutomateXpo<br>"
-            "<a href='https://calendly.com/automatexpos/30min' target='_blank' style='color:#3366cc;'>📅 Schedule a call with us</a>"
-            "</div>",
-            unsafe_allow_html=True
-        )        
-        # Embed Tawk.to widget
-        chat_url = "https://tawk.to/chat/688ce23e394cad192dfa649d/1j1j57hsj"  # Replace with your actual URL
-        image_path = "https://github.com/ZakiSayyed/instagrammanager/blob/main/chatwithus.jpg"
+        calendly_url = "https://calendly.com/automatexpos/30min"
+        calendly_image = "https://raw.githubusercontent.com/ZakiSayyed/instagrammanager/main/scheduleacall.png"
+
+        chat_url = "https://tawk.to/chat/688ce23e394cad192dfa649d/1j1j57hsj"
+        chat_image = "https://raw.githubusercontent.com/ZakiSayyed/instagrammanager/main/chatwithus.jpg"
 
         st.markdown(
             f"""
-            <div style="text-align: center;">
+            <div style="display: flex; justify-content: center; gap: 20px; margin-top: 2em;">
+                <a href="{calendly_url}" target="_blank">
+                    <img src="{calendly_image}" alt="Schedule a call" width="100">
+                </a>
                 <a href="{chat_url}" target="_blank">
-                    <img src="app://{image_path}" alt="Chat with us" width="200">
+                    <img src="{chat_image}" alt="Chat with us" width="100">
                 </a>
             </div>
             """,
